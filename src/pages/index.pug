@@ -1,0 +1,94 @@
+
+extends layout/base
+block variables
+    -var currentPage = 'index'
+    -var title = 'ACME'
+
+block page-content
+    section.b-hero
+        .b-hero__container.b-container
+            .b-hero__inner
+                .b-hero__connect._animation(data-hide="false")
+                    p.b-hero__tagline.b-tagline Tagline
+                    h1.b-hero__title.b-title.b-title--size Medium length display headline
+                    form.b-hero__form.b-form(action="#")
+                        label(for="message").b-form__label Message
+                        input#message.b-form__input(type="text" placeholder="Placeholder")
+                        button.b-form__button.b-form__button--width.b-button.js-button
+                            span.b-button__container
+                            span.b-button__text Action
+                    p.b-hero__info.b-info By clicking the Button you confirming that you’re agree with our following <a href='#'>Terms and Conditions</a>
+                .b-hero__image.b-image._animation(data-hide="false")
+                    img(src="img/1.png", alt="").preview
+
+    section.b-about
+        .b-about__container.b-container
+            .b-about__inner
+                .b-about__column._animation(data-hide="false")
+                    p.b-about__tagline.b-tagline Tagline
+                    h2.b-about__title.b-title Long headline to turn your visitors into users
+                    p.b-about__info.b-info.b-info--size Change the color to match your brand or vision, add your logo, choose the perfect thumbnail, remove the playbar, add speed controls, and more. Increase engagement with CTAs and custom end screens, or keep your video private and password-protected.
+
+    section.b-features
+        .b-features__container.b-container
+            .b-features__item._animation(data-hide="false")
+                a(href="img/Image2.png" title="feature").b-features__image.b-image.progressive.replace
+                    img(src="img/Image2.png", alt="").preview
+                .b-features__column
+                    .b-features__head.b-head
+                        h3.b-head__title.b-title Long headline on two lines to turn your visitors into users and achieve more
+                        .b-head__text
+                            p.b-head__info.b-info Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean Separated they live in Bookmarks right at the coast. <a href='#' class="b-head__link b-link">Read more</a>
+                    ul.b-features__subjects.b-subjects
+                        li.b-subjects__item
+                            .b-subjects__icon
+                                img(src="img/Rectanglefeature1.png", alt="")
+                            h4.b-subjects__title Feature One
+                            p.b-subjects__info Gorgeous, high-quality video sharing on desktop, mobile, tablet
+                        li.b-subjects__item
+                            .b-subjects__icon
+                                img(src="img/Rectanglefeature2.png", alt="")
+                            h4.b-subjects__title Feature Two
+                            p.b-subjects__info Gorgeous, high-quality video sharing on desktop, mobile, tablet
+            .b-features__item._animation(data-hide="false")
+                a(href="img/Image3.png" title="feature").b-features__image.b-image.progressive.replace
+                    img(src="img/Image3.png", alt="").preview
+                .b-features__column
+                    .b-features__head.b-head
+                        h3.b-head__title.b-title Long headline on two lines to turn your visitors into users and achieve more
+                        p.b-head__info.b-info Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean Separated they live in Bookmarks right at the coast
+                    .b-features__payment.b-payment
+                        ul.b-payment__list
+                            li.b-payment__item
+                                img.b-payment__logo(src="img/PayPalpaypal.png", alt="")
+                            li.b-payment__item
+                                img.b-payment__logo(src="img/ApplePay.png", alt="")
+                            li.b-payment__item
+                                img.b-payment__logo(src="img/AndroidPay.png", alt="")
+                            li.b-payment__item
+                                img.b-payment__logo(src="img/SamsungPay.png", alt="")
+            .b-features__item._animation(data-hide="false")
+                a(href="img/Image4.png" title="feature").b-features__image.b-image.progressive.replace
+                    img(src="img/Image4.png", alt="").preview
+                .b-features__column
+                    .b-features__head.b-features__head--margin.b-head
+                        h3.b-head__title.b-title Long headline on two lines to turn your visitors into users and achieve more
+                        p.b-head__info.b-info Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean Separated they live in Bookmarks right at the coast
+                    ul.b-features__list.b-list
+                        li.b-list__item Showcase and embed your work with
+                        li.b-list__item Publish across social channels in a click
+                        li.b-list__item Sell your videos worldwide
+
+    section.b-gallery
+        img.b-gallery__image.b-image(src="img/Imagestripes.png", alt="")
+
+    section.b-blog
+        .b-blog__container.b-container
+            .b-blog__item._animation(data-hide="false")
+                a(href='#').b-blog__title Medium length headline
+                p.b-blog__info Change the color to match your brand or vision, add your logo, choose the perfect thumbnail, remove the playbar
+                a.b-blog__link.b-link(href="#") Read more
+            .b-blog__item._animation(data-hide="false")
+                a(href='#').b-blog__title Medium length headline
+                p.b-blog__info Change the color to match your brand or vision, add your logo, choose the perfect thumbnail, remove the playbar
+                a.b-blog__link.b-link(href="#") Read more

@@ -1,0 +1,259 @@
+
+//## GENERAL HEADER STYLES
+.b-header {
+    width: 100%;
+    position: relative;
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 40px;
+        position: relative;
+        z-index: 3;
+    }
+    &__logo {
+        @include breakpoint(xlg) {
+            margin-right: 70px;
+        }
+        @include breakpoint(md) {
+            margin-right: 20px;
+        }
+        @include breakpoint(sm) {
+            margin-right: 0;
+        }
+    }
+    &__mobile {
+        display: none;
+    }
+    &__column {
+        display: flex;
+        justify-content: center;
+        &--left {
+            flex: 2;
+            @media screen and (min-width: 767.9px) and (max-width: 1399.9px) {
+                order: 2;
+                flex: 1;
+            }
+        }
+        &--center {
+            flex: 1;
+            @media screen and (min-width: 767.9px) and (max-width: 1399.9px) {
+                order: 1;
+                flex: unset;
+            }
+        }
+        &--right {
+            flex: 2;
+            @media screen and (min-width: 767.9px) and (max-width: 1399.9px) {
+                order: 3;
+                flex: unset;
+            }
+        }
+    }
+    &__nav {
+        margin-right: auto;
+        li {
+            &:not(:last-child) {
+                margin: 0px 25px 0px 0px;
+                @include breakpoint(sm) {
+                    margin: 0px 0px 0px 0px;
+                }
+            }
+        }
+    }
+    &__button {
+        margin-left: auto;
+        svg {
+            display: none;
+        }
+    }
+    &__icon {
+        &-wrap {
+            display: none;
+        }
+    }
+    @include breakpoint(sm) {
+        height: 50px;
+        position: fixed;
+        top: 0;
+        background-color: #fff;
+        z-index: 50;
+        &__body {
+            padding: 12px 15px;
+            &::before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                background-color: #fff;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 6;
+            }
+        }
+        &__icon {
+            width: 24px;
+            height: 24px;
+            &-wrap {
+                @include center;
+            }
+        }
+        &__button {
+            background-color: transparent;
+            padding: 10px 10px 10px 10px;
+            margin-right: -10px;
+            position: relative;
+            z-index: 6;
+            span {
+                display: none;
+            }
+            svg {
+                display: block;
+            }
+            &:hover {
+                background-color: transparent;
+            }
+        }
+        &__mobile {
+            display: block;
+            width: 30px;
+            height: 20px;
+            margin-right: auto;
+            position: relative;
+            z-index: 7;
+            span {
+                position: absolute;
+                background-color: #000000;
+                height: 2px;
+                width: 100%;
+                left: 0;
+                top: 9px;
+                transition: all 0.3s ease 0s;
+            }
+            &::after, &::before {
+                content: '';
+                position: absolute;
+                background-color: #000000;
+                width: 100%;
+                height: 2px;
+                left: 0;
+                transition: all 0.3s ease 0s;
+            }
+            &::before {
+                top: 0;
+            }
+            &::after {
+                bottom: 0;
+            }
+            &.active span {
+                transform: scale(0);
+            }
+            &.active::before {
+                transform: rotate(45deg);
+                top: 9px;
+            }
+            &.active::after {
+                transform: rotate(-45deg);
+                bottom: 9px;
+            }
+        }
+        &__logo {
+            position: relative;
+            z-index: 7;
+        }
+        &__nav {
+            @include center;
+            position: fixed;
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            transition: all .3s ease 0s;
+            overflow: auto;
+            z-index: 5;
+        }
+        &__nav.active {
+            top: 0;
+        }
+        &__link {
+            font-size: 24px;
+        }
+        &.is-scrolled {
+            box-shadow: 0px 30px 13px rgba(0,0,0,.15);
+        }
+    }
+}
+.b-logo {
+    font-weight: 700;
+    font-size: 22px;
+    color: #000000;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    &--size {
+        font-size: 34px;
+    }
+    @include breakpoint(lg) {
+        padding: 10px 0;
+    }
+}
+
+.b-nav {
+    &__list {
+        display: flex;
+        &:not(.b-nav__list--outer) {
+            @include breakpoint(sm) {
+                .b-nav__link {
+                    display: block;
+                    font-size: 20px;
+                    padding: 20px 0;
+                }
+                display: block;
+                text-align: center;
+                @media screen and (orientation:landscape) {
+                    padding: 150px 0 70px 0;
+                    .b-nav__link {
+                        padding: 10px 0;
+                    }
+                }
+            }
+        }
+        &--outer {
+            max-width: 320px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            @include breakpoint(md) {
+                max-width: 260px;
+            }
+            li {
+                width: 120px;
+                margin-right: 20px;
+                margin-bottom: 15px;
+                @include breakpoint(md) {
+                    width: auto;
+                    margin-right: 30px;
+                }
+                @include breakpoint(sm) {
+                    width: 120px;
+                    margin-right: 20px;
+                }
+            }
+            @include breakpoint(sm) {
+                max-width: 100%;
+            }
+        }
+    }
+    &__link {
+        text-decoration: none;
+        font-weight: 400;
+        color: #000000;
+        font-size: 16px;
+        line-height: 24px;
+        transition: .2s;
+        &:hover {
+            color: #0065F2;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+if currentPage == 'index'
+    footer.b-footer
+        .b-footer__container.b-container
+            .b-footer__body
+                .b-footer__row
+                    .b-footer__block
+                        .b-footer__contact
+                            a(href="index.html").b-footer__logo.b-logo.b-logo--size Acme
+                            p.b-footer__info Join our newsletter to stay up to date on features and releases
+                            form(action="#").b-footer__form.b-form
+                                label(for="email").b-form__label Email
+                                input#email(type="email" placeholder="Enter your email address").b-footer__input.b-form__input
+                                button(type="submit" aria-label="Send").b-footer__button.b-button.b-button--secondary
+                                    +svg('b-button__icon', 'plane')
+                        +navList('b-footer__nav', 'b-nav__list--outer')
+                        +socials('b-footer__social')
+                .b-footer__row
+                    .b-footer__block
+                        p.b-footer__copy © 2018 Acme. All right reserved.
+                        ul.b-footer__terms.b-terms
+                            li
+                                a(href="#").b-terms__link Privacy Policy
+                            li
+                                a(href="#").b-terms__link Terms of Service
+else
+    footer.b-footer.b-footer--secondary
+        .b-footer__container.b-container
+            .b-footer__body
+                .b-footer__row
+                    .b-footer__block
+                        .b-footer__contact
+                            a(href="index.html").b-footer__logo.b-logo.b-logo--size Acme
+                        +navList('b-footer__nav b-footer__nav--secondary','', 'short')
+                        +socials('b-footer__social')
+                .b-footer__row
+                    .b-footer__block.b-footer__block--centered
+                        p.b-footer__copy © 2018 Acme. All right reserved.
+                        ul.b-footer__terms.b-terms
+                            li
+                                a(href="#").b-terms__link Privacy Policy
+                            li
+                                a(href="#").b-terms__link Terms of Service

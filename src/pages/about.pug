@@ -1,0 +1,106 @@
+extends layout/base
+
+block variables
+    -var currentPage = 'about'
+    -var title = 'About us | ACME'
+
+block page-content
+    section.b-promo
+        .b-promo__container.b-container
+            .b-promo__block._animation(data-hide="false")
+                h1.b-promo__title.b-title.b-title--size Long headline to turn your visitors into users
+                p.b-promo__info.b-info.b-info--size Separated they live in Bookmarksgrove right at the coast of the famous Semantics, large language ocean and many more stuff and more more more
+                a(href="#").b-promo__button.b-button.b-button--size.js-button
+                    span.b-button__container
+                    span.b-button__text Action
+
+    section.b-partners
+        .b-partners__container.b-container
+            .b-partners__inner
+                p.b-partners__heading._animation(data-hide="false") Given the enormous wealth creation from cryptocurrency
+                .b-partners__lists._animation(data-hide="false")
+                    ul.b-partners__list
+                        li.b-partners__item
+                            img(src="img/cisco.png", alt="")
+                        li.b-partners__item
+                            img(src="img/airbnb.png", alt="")
+                    ul.b-partners__list
+                        li.b-partners__item
+                            img(src="img/uber.png", alt="")
+                        li.b-partners__item
+                            img(src="img/ebay.png", alt="")
+                    ul.b-partners__list
+                        li.b-partners__item
+                            img(src="img/cnn.png", alt="")
+                        li.b-partners__item
+                            img(src="img/google2.png", alt="")
+
+    section.b-video
+        .b-video__container.b-container
+            .b-video__inner
+                .b-video__row._animation(data-hide="false")
+                    p.b-video__info.b-info.b-info--size With the new AirPlay 2, you can control your home audio system and the speakers throughout your house.4 You can play a song in the living room and your kitchen at the same time. Adjust the volume in any room.
+                    a.b-video__link.b-link(href="#") Link
+                .b-video__row
+                    .b-video__player._animation(data-hide="false")
+                        button(aria-label="play").b-video__button
+                            +svg('b-video__button-icon', 'play')
+                    p.b-video__info.b-info._animation(data-hide="false") All base UI elements are made using Nested Symbols and shared styles that are logically connected with one another.
+
+    section.b-features
+        .b-features__container.b-container
+            .b-features__item._animation(data-hide="false")
+                .b-features__image.b-image
+                    img(src="img/Image2.png", alt="")
+                .b-features__column
+                    .b-features__heading.b-heading
+                        h2.b-heading__title.b-title Long headline  to turn your visitors into users
+                        .b-heading__text
+                            p.b-heading__info.b-info Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean Separated they live in Bookmarks right at the coast.
+                    ul.b-features__subjects.b-subjects
+                        li.b-subjects__item
+                            h3.b-subjects__title Feature One
+                            p.b-subjects__info Gorgeous, high-quality video sharing on desktop, mobile, tablet
+                        li.b-subjects__item
+                            h3 .b-subjects__title Feature Two
+                            p.b-subjects__info Gorgeous, high-quality video sharing on desktop, mobile, tablet
+            .b-features__item._animation(data-hide="false")
+                .b-features__image.b-image
+                    img(src="img/Image2.png", alt="")
+                .b-features__column
+                    .b-features__heading.b-heading
+                        h3.b-heading__title.b-title Long headline  to turn your visitors into users
+                        .b-heading__text
+                            p.b-heading__info.b-info Separated they live in Bookmarks right at the coast of the famous Semantics, large language ocean Separated they live in Bookmarks right at the coast.
+                    ul.b-features__subjects.b-subjects
+                        li.b-subjects__item
+                            h3.b-subjects__title Feature One
+                            p.b-subjects__info Gorgeous, high-quality video sharing on desktop, mobile, tablet
+                        li.b-subjects__item
+                            h3.b-subjects__title Feature Two
+                            p.b-subjects__info Gorgeous, high-quality video sharing on desktop, mobile, tablet
+
+    section.b-price._animation(data-hide="false")
+        .b-price__container.b-container
+            .b-price__header
+                p.b-price__tagline.b-tagline Tagline
+                h2.b-price__title.b-title.b-title--secondary Long headline to turn your visitors into users
+            .b-price__tabs.b-tabs(rel="js-tabs")
+                nav.b-tabs__nav
+                    .b-tabs__item.active(rel="js-tabs-button") Monthly
+                    .b-tabs__item(rel="js-tabs-button") Yearly
+                .b-tabs__info
+                    .b-tabs__content.active(rel="js-tabs-content")
+                        -var type = 'monthly'
+                        ul.b-tabs__list
+                            include parts/card-list.pug
+                    .b-tabs__content(rel="js-tabs-content")
+                        -var type = 'yearly'
+                        ul.b-tabs__list
+                            include parts/card-list.pug
+
+    section.b-headline
+        .b-headline__container.b-container
+            h2.b-headline__title.b-title.b-title--size Long headline on two lines to turn your visitors into users and achieve more
+            a.b-headline__link.b-link(href="#") Action link
+

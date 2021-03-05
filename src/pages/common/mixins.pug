@@ -1,0 +1,93 @@
+mixin svg(iconClass,name)
+    svg(class=iconClass)
+        use(xlink:href=`img/sprite/sprite.svg#${name}`)
+
+mixin navList(classname, mod, ...type)
+    nav(class=`${classname} b-nav`)
+        if type == 'short'
+            -
+                var navList = [
+                    {
+                        title: 'First item',
+                        link: 'about.html',
+                    },
+                    {
+                        title: 'Second item',
+                        link: '#',
+                    },
+                    {
+                        title: 'Third item',
+                        link: '#',
+                    },
+                    {
+                        title: 'Fourth item',
+                        link: '#',
+                    },
+                    {
+                        title: 'Fifth item',
+                        link: '#',
+                    },
+                ]
+        else
+            -
+                var navList = [
+                    {
+                        title: 'First item',
+                        link: 'about.html',
+                    },
+                    {
+                        title: 'Second item',
+                        link: '#',
+                    },
+                    {
+                        title: 'Third item',
+                        link: '#',
+                    },
+                    {
+                        title: 'Fourth item',
+                        link: '#',
+                    },
+                    {
+                        title: 'Fifth item',
+                        link: '#',
+                    },
+                    {
+                        title: 'Sixth item',
+                        link: '#',
+                    },
+                    {
+                        title: 'Seven item',
+                        link: '#',
+                    },
+                ]
+        ul(class=`b-nav__list ${mod}`)
+            each key in navList
+                li
+                    a.b-nav__link(href=`${key.link}`) #{key.title}
+
+mixin socials(classname)
+    nav(class=`${classname} b-social`)
+        -
+            var socialList = [
+                {
+                    link: '#',
+                    icon: 'instagram',
+                    title: 'Instagram',
+                },
+                {
+                    link: '#',
+                    icon: 'facebook',
+                    title: 'Facebook',
+                },
+                {
+                    link: '#',
+                    icon: 'twitter',
+                    title: 'Twitter',
+                },
+            ]
+        ul.b-social__list
+            each key in socialList
+                li
+                    a.b-social__link(href=key.link target="_blank" rel="nofollow noopener noreferrer" title=`${key.title}`)
+                        +svg('b-social__icon', key.icon)
+                        span.b-social__item #{key.title}

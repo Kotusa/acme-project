@@ -1,0 +1,233 @@
+
+//## GENERAL FOOTER STYLES
+.b-footer {
+    padding: 45px 0;
+    &__block {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &--centered {
+            justify-content: center;
+            p {
+                margin-right: 15px;
+                @include breakpoint(sm) {
+                    margin-right: 0;
+                }
+            }
+        }
+        @include breakpoint(md) {
+            align-items: flex-start;
+        }
+        @include breakpoint(sm) {
+            flex-direction: column;
+            max-width: 390px;
+            width: 100%;
+        }
+    }
+    &__body {
+        padding-bottom: 20px;
+    }
+    &__row {
+        display: flex;
+        justify-content: center;
+        &:not(:last-child) {
+            margin: 0 0 105px;
+            @include breakpoint(sm) {
+                margin: 0px 0px 45px 0px;
+            }
+        }
+        @include breakpoint(sm) {
+            justify-content: flex-start;
+        }
+    }
+    &__contact {
+        max-width: 285px;
+        width: 100%;
+        @include breakpoint(sm) {
+            max-width: 100%;
+            margin: 0px 0px 30px 0px;
+        }
+    }
+    &__logo {
+        display: inline-block;
+        margin: 0px 0px 20px 0px;
+        padding: 0px 0px 0px 0px;
+    }
+    &__info {
+        max-width: 300px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #00000054;
+        margin: 0 0 28px 0;
+    }
+    &__input {
+        max-width: 270px;
+        width: 100%;
+    }
+    &__nav {
+        display: flex;
+        justify-content: flex-start;
+        height: 100%;
+        padding-top: 35px;
+        @include breakpoint(md) {
+            padding: 0 15px;
+        }
+        @include breakpoint(sm) {
+            padding: 35px 0px 0px 0px;
+        }
+        &--secondary {
+            display: flex;
+            align-items: center;
+            @include breakpoint(sm) {
+                order: 3;
+                padding: 0px 0px 0px 0px;
+            }
+            .b-nav__list {
+                @include breakpoint(sm) {
+                    padding: 0px 0px 0px 0px !important;
+                    flex-direction: column;
+                    li:not(:last-child) {
+                        margin: 0px 0px 20px 0px;
+                    }
+                    .b-nav__link {
+                        padding: 0px 0px 0px 0px;
+                    }
+                }
+                li:not(:last-child) {
+                    margin: 0px 30px 0px 0px;
+                    @media screen and (max-width:870px) {
+                        margin: 0px 15px 0px 0px;
+                    }
+                }
+            }
+        }
+    }
+    &__copy {
+        margin: 0px 0px 0px 0px;
+        color: #00000054;
+        font-size: 14px;
+        line-height: 20px;
+        @include breakpoint(sm) {
+            margin: 0px 0px 16px 0px;
+        }
+    }
+    &__social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 220px;
+        padding-bottom: 15px;
+        padding-right: 60px;
+        @include breakpoint(md) {
+            padding: 0px 0px 0px 0px;
+        }
+        @include breakpoint(sm) {
+            padding: 25px 0;
+        }
+    }
+    &--secondary {
+        .b-footer {
+            &__block {
+                align-items: center;
+                @include breakpoint(sm) {
+                    @include center-column;
+                    text-align: center;
+                }
+            }
+            &__nav {
+                padding-top: 0;
+            }
+            &__row {
+                &:not(:last-child) {
+                    margin: 0px 0px 44px 0px;
+                }
+                @include breakpoint(sm) {
+                    @include center-column;
+                }
+            }
+            &__contact {
+                max-width: 100px;
+                margin: 0;
+            }
+            &__logo {
+                margin: 0;
+                @include breakpoint(sm) {
+                    margin: 0px 0px 40px 0px;
+                }
+            }
+        }
+        .b-social {
+            min-height: auto;
+            &__icon {
+                @include breakpoint(sm) {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+            @include breakpoint(sm) {
+                margin: 0px 0px 40px 0px;
+            }
+            padding: 0;
+            &__list {
+                flex-direction: row;
+                li:not(:last-child) {
+                    margin: 0px 15px 0px 0px;
+                }
+            }
+            &__item {
+                display: none;
+            }
+        }
+    }
+}
+
+.b-social {
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+    &__link {
+        text-decoration: none;
+        color: #000000;
+        display: flex;
+        align-items: center;
+    }
+    &__icon {
+        width: 25px;
+        height: 25px;
+    }
+    &__item {
+        display: inline-block;
+        font-size: 14px;
+        line-height: 32px;
+        margin-left: 12px;
+    }
+}
+
+.b-terms {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @include breakpoint(sm) {
+        flex-direction: column;
+    }
+    li {
+        &:not(:last-child) {
+            margin: 0px 24px 0px 0px;
+            @include breakpoint(sm) {
+                margin: 0px 0px 16px 0px;
+            }
+        }
+    }
+    &__link {
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 20px;
+        color: #00000054;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

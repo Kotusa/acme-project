@@ -1,0 +1,13 @@
+header.b-header(rel="js-header")
+    .b-header__body
+        .b-header__column.b-header__column--left
+            .b-header__mobile(rel="js-header-mobile")
+                span
+            +navList('b-header__nav', '', 'short')
+        .b-header__column.b-header__column--center
+            a(href="index.html").b-header__logo.b-logo Acme
+        .b-header__column.b-header__column--right
+            a(href="#").b-header__button.b-button.b-button--small.js-button
+                span.b-button__container
+                span.b-button__text Action
+                +svg('b-header__icon', 'star')

@@ -1,0 +1,103 @@
+-
+    var cardList = [
+        {
+            title: 'Beginner',
+            price: type == 'monthly' ? '20' : '189.99',
+            oldYearlyPrice: '200',
+            payment: type == 'monthly' ? 'Month' : 'Year',
+            benefits: [
+                {
+                    content: 'Showcase and embed your work'
+                },
+                {
+                    content: 'Publish across social channels'
+                },
+                {
+                    content: 'Sell your videos worldwide'
+                },
+                {
+                    content: 'Sell your videos worldwide'
+                }
+            ],
+            id: type == 'monthly' ? '532' : '533',
+            link: '#',
+            buttonContent: 'Action',
+        },
+        {
+            title: 'Personal',
+            price: type == 'monthly' ? '29' : '279.99',
+            oldYearlyPrice: '290',
+            payment: type == 'monthly' ? 'Month' : 'Year',
+            benefits: [
+                {
+                    content: 'Showcase and embed your work'
+                },
+                {
+                    content: 'Publish across social channels'
+                },
+                {
+                    content: 'Premium support'
+                },
+                {
+                    content: 'Sell your videos worldwide'
+                },
+                {
+                    content: 'Subscription'
+                }
+            ],
+            id: type == 'monthly' ? '534' : '535',
+            link: '#',
+            buttonContent: 'Action',
+        },
+        {
+            title: 'Unlimited',
+            price: type == 'monthly' ? '79' : '779.99',
+            oldYearlyPrice: '790',
+            payment: type == 'monthly' ? 'Month' : 'Year',
+            benefits: [
+                {
+                    content: 'Showcase and embed your work'
+                },
+                {
+                    content: 'Publish across social channels'
+                },
+                {
+                    content: 'Sell your videos worldwide'
+                },
+                {
+                    content: 'Custom domains'
+                },
+                {
+                    content: 'Premium support'
+                },
+                {
+                    content: 'Analytics'
+                }
+            ],
+            id: type == 'monthly' ? '536' : '537',
+            link: '#',
+            buttonContent: 'Action',
+        },
+    ]
+
+each key in cardList
+    li.b-tabs__card.b-card
+        .b-card__heading
+            .b-card__block
+                span.b-card__title #{key.title}
+            .b-card__block
+                if type == 'monthly'
+                    span.b-card__price(data-currency="$") #{key.price}
+                else
+                    .b-card__price-wrap
+                        span.b-card__price.b-card__price--old(data-currency="$") #{key.oldYearlyPrice}
+                        span.b-card__price.b-card__price--new(data-currency="$") #{key.price}
+                span.b-card__info #{key.payment}
+        .b-card__description
+            .b-card__text By creating an Account on our service, you agree to subscribe
+            ul.b-card__list
+                each value in key.benefits
+                    li #{value.content}
+        a(href=key.link data-id=key.id).b-card__button.b-button.b-button--full.js-button
+            span.b-button__container
+            span.b-button__text #{key.buttonContent}
